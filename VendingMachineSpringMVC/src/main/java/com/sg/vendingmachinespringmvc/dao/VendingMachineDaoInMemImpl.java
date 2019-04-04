@@ -37,7 +37,9 @@ public class VendingMachineDaoInMemImpl implements VendingMachineDao{
 
     @Override
     public void vendItem(Item item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       int inventoryChange = item.getItemInventory();
+       inventoryChange--;
+       item.setItemInventory(inventoryChange);
     }
 
     @Override

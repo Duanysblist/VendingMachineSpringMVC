@@ -69,9 +69,6 @@ public class VendingMachineServiceLayerImpl implements VendingMachineServiceLaye
        Change daChangeReturned = new Change(changeReturned);
        change = daChangeReturned;
        balance = new BigDecimal("0.00");
-       int inventoryChange = item.getItemInventory();
-       inventoryChange--;
-       item.setItemInventory(inventoryChange);
        dao.vendItem(item);
        textMessage = "Thank You!";
         } catch (NoItemInventoryException | InsufficientFundsException | VendingMachineInvalidIdException ex) {
